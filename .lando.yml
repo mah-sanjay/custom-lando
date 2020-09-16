@@ -1,0 +1,49 @@
+name: project_name
+recipe: drupal8
+proxy:
+  search:
+    - search.project_name.lndo.site:8983
+  mailhog:
+    - mail.project_name.lndo.site
+  phpmyadmin:
+    - pma.project_name.lndo.site
+config:
+  php: '7.2'
+  via: nginx
+  webroot: docroot
+  database: mysql:5.7
+  drush: ^8
+  xdebug: true
+services:
+  node:
+    type: node
+    build:
+      - npm install
+      - npm audit fix
+      - npm run build
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+#  search:
+#    type: solr:custom
+#    via: cli
+#    overrides:
+#      image: lando/solr:7.7-drupal
+# The below line is used to get docker build context working.
+#      build:
+#          context: ./lagoon
+#          dockerfile: solr.dockerfile
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+excludes:
+  - vendor
+  - node_modules
+  - docroot/modules/contrib
