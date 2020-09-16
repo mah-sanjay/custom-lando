@@ -1,8 +1,38 @@
 # custom-lando
-My custom lando project
+Lando It's a free, open source, cross-platform, local development environment and DevOps tool built on Docker container technology and developed by Tandem. 
+Designed to work with most major languages, frameworks and services, Lando provides an easy way for developers of all skill levels to specify simple or complex requirements for their projects, and then quickly get to work on them.
 
-### Put .lando.yml in your project root and settings.local.php inside docroo/sites/default folder.
-
+The lando file can be used to run any existing drupal 8 sites locally. 
+ - Copy .lando.yml file in your project root.
+ - Using terminal, from project root, hit -> `lando start`.
+ - To import database, use `lando db-import /path/to/datbase`.
+ - Now, in your settings.local.php, change database details as follows:
+ ```
+ if (!defined('LANDO_INFO') && isset($_ENV['LANDO_INFO'])) {
+   define('LANDO_INFO', json_decode($_ENV['LANDO_INFO'], TRUE));
+ }
+ 
+ // When using lando.
+ if (defined('LANDO_INFO')) {
+   // One of "internal" or "external". Usually, "internal".
+   define('LANDO_DATABASE', 'internal');
+ 
+   $databases['default']['default'] = array(
+     'database' => LANDO_INFO['database']['creds']['database'],
+     'username' => LANDO_INFO['database']['creds']['user'], 
+     'password' => LANDO_INFO['database']['creds']['password'], 
+     'prefix' => '',
+     'host' => LANDO_INFO['database'][LANDO_DATABASE . '_connection']['host'],
+     'port' => LANDO_INFO['database'][LANDO_DATABASE . '_connection']['port'],
+     'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+     'driver' => 'mysql',
+   );
+ }
+ ```
+  - Hit `lando drush cr`.
+  - Hit `lando info` to get local site url.
+  - Load the site.
+   
 # Usage: lando <command> [args] [options]
 
 ## Commands:
