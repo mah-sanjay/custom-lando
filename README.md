@@ -24,17 +24,21 @@ Command | Description
   lando version  |  Displays the lando version
 
 ## Options:
-  - --channel       Sets the update channel
-  - --clear         Clears the lando tasks cache
-  - --experimental  Activates experimental features
-  - --help          Shows lando or delegated command help if applicable
-  - --verbose, -v   Runs with extra verbosity
+Option | Description
+------------ | -------------
+  --channel       | Sets the update channel
+  --clear         | Clears the lando tasks cache
+  --experimental  | Activates experimental features
+  --help          | Shows lando or delegated command help if applicable
+  --verbose, -v   | Runs with extra verbosity
 
 ## Examples:
-  - lando start            Run lando start
-  - lando rebuild --help  Get help about using the lando rebuild command
-  - lando destroy -y -vvv  Run lando destroy non-interactively and with maximum verbosity
-  - lando --clear          Clear the lando tasks cache
+Example | Description
+------------ | -------------
+  lando start            | Run lando start
+  lando rebuild --help   | Get help about using the lando rebuild command
+  lando destroy -y -vvv  | Run lando destroy non-interactively and with maximum verbosity
+  lando --clear          | Clear the lando tasks cache
 
 You need at least one command before moving on
 
@@ -64,16 +68,20 @@ Command | Description
    lando version      |     Displays the lando version
 
 ## Options:
-  - --channel       Sets the update channel
-  - --clear         Clears the lando tasks cache
-  - --experimental  Activates experimental features
-  - --help          Shows lando or delegated command help if applicable
-  - --verbose, -v   Runs with extra verbosity
+Option | Description
+------------ | -------------
+  --channel      |   Sets the update channel
+  --clear        |   Clears the lando tasks cache
+  --experimental |   Activates experimental features
+  --help         |   Shows lando or delegated command help if applicable
+  --verbose, -v  |   Runs with extra verbosity
 
 ## Examples:
-  - lando start            Run lando start
-  - lando rebuild --help  Get help about using the lando rebuild command
-  - lando destroy -y -vvv  Run lando destroy non-interactively and with maximum verbosity
-  - lando --clear          Clear the lando tasks cache
+Example | Description
+------------ | -------------
+   lando start            | Run lando start
+   lando rebuild --help   | Get help about using the lando rebuild command
+   lando destroy -y -vvv  | Run lando destroy non-interactively and with maximum verbosity
+   lando --clear          | Clear the lando tasks cache
 
 You need at least one command before moving on
