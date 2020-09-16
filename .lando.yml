@@ -1,8 +1,8 @@
 name: project_name
 recipe: drupal8
 proxy:
-  search:
-    - search.project_name.lndo.site:8983
+#  search:
+#    - search.project_name.lndo.site:8983
   mailhog:
     - mail.project_name.lndo.site
   phpmyadmin:
