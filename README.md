@@ -1,5 +1,5 @@
 # custom-lando
-Lando It's a free, open source, cross-platform, local development environment and DevOps tool built on Docker container technology and developed by Tandem. 
+Lando is a free, open source, cross-platform, local development environment and DevOps tool built on Docker container technology and developed by Tandem. 
 Designed to work with most major languages, frameworks and services, Lando provides an easy way for developers of all skill levels to specify simple or complex requirements for their projects, and then quickly get to work on them.
 
 The lando file can be used to run any existing drupal 8 sites locally. 
